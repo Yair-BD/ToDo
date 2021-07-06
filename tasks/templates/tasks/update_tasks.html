@@ -1,0 +1,20 @@
+<h3>Update Task "{{task.title}}"</h3>
+
+<form method="POST" action="">
+	{% csrf_token %}
+
+
+	<h2>{{form.title}} {{form.complete}}</h2>
+{%if task.created_at == task.updated_at%}
+	<h2>Create {{task.created_at}}</h2>
+{%else%}
+	<h2>Create: {{task.created_at}}</h2>
+	<h3>Last update: {{task.updated_at}} </h3>
+{%endif%}
+	<input type="submit" name="Update Task">
+
+	<a href="../../">Cancel</a>
+
+
+
+</form>

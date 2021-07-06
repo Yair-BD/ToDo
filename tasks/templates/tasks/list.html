@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="he">
+<head>
+{%if request.user.is_authenticated%}
+    <title> Coding for practice </title>
+    <p>{{request.user}}</p>
+    <a href=""> Log out </a>
+{%else%}
+    <a href="{% url 'login' %}"> Log in </a>
+{%endif%}
+
+</head>
+<body>
+<h1>
+Tasks
+</h1>
+ <h6> והינה זה בא  </h6>
+
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form.title}}
+
+    <input type="submit" name="Create Task">
+
+</form>
+
+{% for task in tasks %}
+    <div>
+        {% if task.complete == True %}
+            <strike>{{task}}</strike>
+        {% else %}
+            <span>{{task}}</span>
+        {% endif %}
+        <br>
+
+        <a href="/update_task/{{task.id}}">עדכן</a>
+        <a href="/delete_task/{{task.id}}">מחק</a>
+    </div>
+{% endfor %}
+
+
+</body>
+
+
+</html>
+
