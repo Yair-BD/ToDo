@@ -19,7 +19,6 @@ from . import views
 
 app_name = "tasks"
 urlpatterns = [
-    path("login/",views.CustomLoginView.as_view(), name='login'),
     path("", views.index, name="tasks"),
     path('update_task/<str:pk>/', views.updateTask, name="task-update"),
     path('delete_task/<str:pk>/', views.deleteTask, name="task-delete"),

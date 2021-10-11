@@ -1,13 +1,6 @@
 <!doctype html>
 <html lang="he">
 <head>
-{%if request.user.is_authenticated%}
-    <title> Coding for practice </title>
-    <p>{{request.user}}</p>
-    <a href=""> Log out </a>
-{%else%}
-    <a href="{% url 'login' %}"> Log in </a>
-{%endif%}
 
 </head>
 <body>

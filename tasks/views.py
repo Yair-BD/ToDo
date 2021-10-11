@@ -1,10 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .models import *
 from .forms import *
-from django.contrib.auth.views import LoginView
-from django.urls import reverse_lazy
-
+from django.views.generic import *
 
 
 def index(request):
